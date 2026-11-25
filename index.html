@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--
   ⚠ 빌드 결과물입니다 — 이 파일을 직접 고치지 마세요.
-  원본: src/template.html  →  python build.py  로 다시 만듭니다.  (빌드: 2026-11-25 20:45 KST)
+  원본: src/template.html  →  python build.py  로 다시 만듭니다.  (빌드: 2026-11-25 21:19 KST)
 -->
 <html lang="ko">
 <head>
@@ -709,6 +709,184 @@ body:not(.is-home) .hero-logo { width: 76px; }
   .is-home .banner-in { padding-top: 139px; }
   .hero-board h1 { font-size: 30px; }
 }
+
+/* ── 메뉴와 본문 가독성 ── */
+.topbar .nav-tab {
+  position: relative;
+  min-height: 50px;
+  padding: 7px clamp(11px, 1.25vw, 20px);
+  font-family: 'Pretendard Variable', Pretendard, 'Malgun Gothic', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 720;
+  font-synthesis: none;
+  letter-spacing: -.025em;
+  line-height: 1.22;
+  color: #332317;
+  background: linear-gradient(#fff9eb, #f5e5c8);
+  border: 1px solid #493222;
+  box-shadow: inset 0 1px #fffdf5, 0 2px #38271a;
+}
+.topbar .nav-tab:hover {
+  background: #fffaf0;
+}
+.topbar .nav-tab.on {
+  color: #fffdf8;
+  background: #923426;
+  border-color: #f4c079;
+  box-shadow: inset 0 0 0 1px #be754a, 0 2px #38271a;
+}
+.topbar .nav-tab.on::after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  width: 23px;
+  left: calc(50% - 11.5px);
+  bottom: 3px;
+  border-radius: 3px;
+  background: #ffda8d;
+}
+.topbar .nav-dot {
+  display: inline-block;
+  margin-inline: .075em;
+}
+@media (min-width:761px) and (max-width:1110px) {
+  .topbar .nav-tab { font-size: 1.375rem; padding-inline: 8px; }
+}
+@media (min-width:761px) and (max-width:850px) {
+  .topbar .tabs { gap: 3px; padding-inline: 8px; }
+  .topbar .nav-tab { font-size: 1.3125rem; padding-inline: 4px; }
+}
+@media (max-width:760px) {
+  .topbar { padding-right: 72px; }
+  .topbar .nav-tab { min-height: 48px; padding: 7px 12px; font-size: 1.3125rem; }
+  .topbar .nav-tab.on::after { height: 2px; bottom: 3px; }
+  .topbar .menu-toggle {
+    top: 4px; right: 3px; width: 66px; min-height: 48px;
+    display: flex; align-items: center; justify-content: center; gap: 5px;
+    font: 650 1rem/1.2 'Pretendard Variable', Pretendard, 'Malgun Gothic', sans-serif;
+    color: #fff5df;
+  }
+  .topbar .menu-toggle::before { width: 14px; height: 14px; background-size: 5.5px 5.5px; }
+  .topbar .menu-toggle[aria-expanded="true"]::before { background-size: 100% 100%; }
+  .topbar .menu-toggle::after { content: "전체"; }
+  .topbar .menu-toggle[aria-expanded="true"]::after { content: "닫기"; }
+  .topbar.menu-open .tabs { padding-right: 4px; }
+}
+
+/* 글자 크기는 브라우저 기본 글꼴 크기를 따르고, 좁은 화면에서는 칸을 다시 나눈다. */
+:root {
+  --read-text: 1.375rem;
+  --read-table: 1.25rem;
+  --read-caption: 1.125rem;
+  --read-heading: 1.75rem;
+  --ink2: #5c4434;
+}
+body { font-size: var(--read-text); line-height: 1.68; font-weight: 450; }
+.intro, .hero-board .lead { font-size: var(--read-text); line-height: 1.62; }
+.body > p, .dots li, .dl dd { line-height: 1.68; }
+.body > p { margin-bottom: .7em; }
+.body > p:last-child { margin-bottom: 0; }
+.body strong, .body b { color: #452a1a; }
+.eyebrow, .open .k, .open .dd, .mini span { font-size: var(--read-caption); }
+.mini span { line-height: 1.4; }
+.hero-board h1 { font-size: clamp(2.125rem, 3.2vw, 2.625rem); }
+.open b { font-size: 1.5rem; }
+.cta .btn { min-height: 46px; font-size: 1.3125rem; }
+.hero-board .lead { max-width: none; }
+.plaque h2 { font-size: 2.25rem; white-space: normal; }
+.plaque, .plaque .rib { max-width: 100%; }
+.plaque .rib { font-size: var(--read-caption); line-height: 1.3; white-space: normal; }
+.lab h3 { font-size: var(--read-heading); line-height: 1.3; }
+.lab .sub, .lab .no, .src, .tbd, .soon, .chip, kbd, .note, .keyline,
+.land-ctl .cap, .readout small, .stage .nm small, .track .ar small,
+.tk-k, .tk-dish .q, .tk-line, .board .foot, .vitem .ef, .plist .amt small,
+.dday small, .pn time small, footer, .index-value { font-size: var(--read-caption); }
+.tbd, .tk-val, .index-links .chapter-sub { line-height: 1.45; }
+.tbd { color: #764115; border-color: #ad7334; vertical-align: baseline; }
+.note { color: #513927; }
+.index-links button { font-size: var(--read-table); padding-block: 9px; }
+.index-links .chapter-sub { font-size: var(--read-caption); color: #d5dce3; padding-block: 7px; }
+.index-box summary { font-size: 1.5rem; }
+.tbl { font-size: var(--read-table); line-height: 1.55; }
+.tbl.wide { min-width: 0; }
+.tbl th, .tbl td.k, .tbl.stack td.k {
+  font-family: 'Pretendard Variable', Pretendard, sans-serif;
+  font-size: var(--read-table); font-weight: 700; white-space: normal;
+}
+.tbl th { line-height: 1.4; }
+.tbl th, .tbl td { padding: 10px clamp(5px, .8vw, 12px); }
+.tbl td.dim { color: #72583f; }
+.dl dt, .stage .nm, .rules .rt, .res .k, .duo h4, .plist h4, .cost .c,
+.land-ctl label, .vitem .nm, .tk-val, .vend-top { font-size: 1.4375rem; }
+.flow .t, .mrow .it, .legend li, .duo p, .plist p, .pair > div, .rules small,
+.slot .nm, .slot .ct, .vitem .pr, .track .st, .tk-set, .tk-go, .pair h5,
+.track .tl, .land-out small, .tk-no, .tk-stamp, footer b { font-size: var(--read-table); }
+.stage .nm small { margin-top: 4px; }
+.rules .rt { line-height: 1.5; }
+.rules .rt > small { margin-top: 3px; }
+.dl { grid-template-columns: minmax(132px, 32%) minmax(0,1fr); }
+.hotbar { grid-template-columns: repeat(auto-fit,minmax(min(100%,8.25rem),1fr)); }
+.slot { display: grid; grid-template-rows: 1fr auto; align-items: center; aspect-ratio: auto; min-height: 82px; gap: 3px; padding: 7px; }
+.slot .nm { justify-self: center; line-height: 1.35; }
+.slot .ct { position: static; justify-self: end; }
+.screen { width:100%; min-width:0; min-height:275px; }
+.hudwrap > * { min-width: 0; }
+.hud { font-size: var(--read-caption); row-gap: 4px; }
+.hud .nick, .hud .gb em, .screen .cap { font-size: var(--read-caption); }
+.hud .gb em { width: auto; min-width: 3em; }
+.hud .nb, .legend li::before { font-size: 1rem; }
+.hud .nb { width:22px; height:22px; }
+.screen .cap { color: #fff5e6; background: #211a17cc; padding-inline: 4px; border-radius: 3px; }
+.tk-line { flex-wrap: wrap; }
+.tk-dish { width: 74px; }
+.tk-stamp { width: 68px; height: 68px; }
+.mrow { grid-template-columns: minmax(116px,max-content) minmax(0,1fr); }
+.land-out, .board h4, .empty .big { font-size: 1.875rem; }
+.mrow .pr, .dday .when, .pn time { font-size: 1.5rem; }
+.dday .cnt { font-size: 2.625rem; }
+.readout { row-gap: 10px; }
+.readout b { font-size: 2.75rem; }
+.go { white-space: normal; }
+.win, .row { scroll-margin-top: 5.5rem; }
+@media(min-width:1111px) {
+  .row:not(.full) { grid-template-columns: 150px minmax(0,1fr); }
+}
+@media(min-width:1051px) {
+  .doc-index { top: 5.15rem; max-height: calc(100vh - 6rem); overflow-y: auto; }
+}
+@media(min-width:861px) and (max-width:1350px) {
+  .hudwrap { grid-template-columns: 1fr; }
+  .screen { max-width: 520px; }
+  .flow { grid-template-columns: repeat(3,minmax(0,1fr)); row-gap: 17px; }
+  .flow li:nth-child(4)::before { display: none; }
+}
+@media(max-width:760px) {
+  :root { --read-text: 1.3125rem; --read-caption: 1.0625rem; --read-heading: 1.625rem; }
+  .hero-board h1 { font-size: 2.125rem; }
+  .cta .btn, .open b { font-size: 1.25rem; }
+  .open { gap: 4px 7px; }
+  .cta .btn { padding-inline: 11px; }
+  .plaque h2 { font-size: 1.875rem; }
+  .index-box summary { min-height: 48px; }
+  .stage { column-gap: 9px; }
+  .tbl:not(.stack) th, .tbl:not(.stack) td { padding-inline: 5px; }
+  .tbl.prob:not(.stack) th, .tbl.prob:not(.stack) td { padding: 8px 2px; }
+  .flow .t { line-height: 1.6; }
+  .hotbar { gap: 6px; }
+  .win-body { padding-inline: 14px; }
+  .hudwrap { grid-template-columns: minmax(0,1fr); }
+}
+@media(max-width:640px) {
+  .dl, .mrow { grid-template-columns: 1fr; }
+  .tbl.stack td { padding: 3px 0; grid-template-columns: minmax(5.25em,32%) minmax(0,1fr); }
+  .tbl.stack td::before { white-space: normal; font-size: var(--read-caption); line-height: 1.45; }
+  .readout b { font-size: 2.25rem; }
+  .tk-a { flex-wrap: wrap; }
+}
+@media(max-width:350px) {
+  .tbl:not(.stack) td.num { white-space: normal; }
+  .tbl:not(.stack):not(.prob) td, .tbl:not(.stack):not(.prob) th { padding-inline: 3px; }
+}
 </style>
 </head>
 <body class="is-home">
@@ -741,10 +919,10 @@ body:not(.is-home) .hero-logo { width: 76px; }
   <div class="tabs" id="wiki-menu-items" role="tablist">
     <button class="nav-tab" data-tab="home" role="tab">홈</button>
     <button class="nav-tab" data-tab="survive" role="tab">생존</button>
-    <button class="nav-tab" data-tab="dex" role="tab">도감·영지</button>
+    <button class="nav-tab" data-tab="dex" role="tab">도감<span class="nav-dot">·</span>영지</button>
     <button class="nav-tab" data-tab="life" role="tab">생활</button>
-    <button class="nav-tab" data-tab="gear" role="tab">장비·강화</button>
-    <button class="nav-tab" data-tab="shop" role="tab">꾸몬·상점</button>
+    <button class="nav-tab" data-tab="gear" role="tab">장비<span class="nav-dot">·</span>강화</button>
+    <button class="nav-tab" data-tab="shop" role="tab">꾸몬<span class="nav-dot">·</span>상점</button>
     <button class="nav-tab" data-tab="api" role="tab">API</button>
     <button class="nav-tab" data-tab="rules" role="tab">서버 룰</button>
     <button class="nav-tab" data-tab="join" role="tab">참여 안내</button>
