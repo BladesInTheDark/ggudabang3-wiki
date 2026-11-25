@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--
   ⚠ 빌드 결과물입니다 — 이 파일을 직접 고치지 마세요.
-  원본: src/template.html  →  python build.py  로 다시 만듭니다.  (빌드: 2026-11-25 21:30 KST)
+  원본: src/template.html  →  python build.py  로 다시 만듭니다.  (빌드: 2026-11-26 00:48 KST)
 -->
 <html lang="ko">
 <head>
@@ -958,6 +958,7 @@ body { font-size: var(--read-text); line-height: 1.68; font-weight: 450; }
 .mrow .pr, .dday .when, .pn time { font-size: calc(1.5rem + var(--font-step)); }
 .dday .cnt { font-size: calc(2.625rem + var(--font-step)); }
 .readout b { font-size: calc(2.75rem + var(--font-step)); }
+.readout .ex em { font-style: normal; font-size: var(--read-text); color: var(--ink2); padding-right: 4px; }
 .is-home .brand-name, .mini b { font-size: calc(1.5625rem + var(--font-step)); }
 .flow .n, .mk { font-size: calc(1.125rem + var(--font-step)); }
 .cost .plus { font-size: var(--read-text); }
@@ -1094,7 +1095,7 @@ body:not(.is-home) .mini { min-width: 0; }
         <div class="lab"><span class="no">01</span><h3>어떤 서버?</h3></div>
         <div class="body">
           <p>다이아서버 포맷을 가져오되, 모아야 할 목표가 다이아몬드 하나에서 <b>마인크래프트의 모든 아이템</b>으로 넓어진 <b>도감 서버</b>예요.</p>
-          <p>이번 시즌엔 <b>겨울 야생</b>에서 자원을 모으고, <b>농사 · 낚시 · 요리</b>로 생활 기반을 만들면서, <b>온기와 칼로리</b>를 관리하고 <b>장비와 도감</b>을 키워 나가요.</p>
+          <p>꾸다방2, 꾸다방2.5에 이어 이번 시즌엔 <b>겨울 야생</b>에서 자원을 모으고, <b>농사 · 낚시 · 요리</b>로 생활 기반을 만들면서, <b>온기와 칼로리</b>를 관리하고 <b>장비와 도감</b>을 키워 나가요.</p>
         </div>
       </div>
       <div class="row">
@@ -1119,7 +1120,7 @@ body:not(.is-home) .mini { min-width: 0; }
             <dt>춥고 배고픈 겨울</dt>
             <dd>시간이 지나면 <b>온기</b>가 줄고, 먹을수록 <b>칼로리</b>가 차요. 두 게이지 관리가 곧 생존이에요. <a class="go" data-go="survive" href="#survive">생존</a></dd>
             <dt>야생엔 동물이 없어요</dt>
-            <dd>몹과 광물만 스폰돼요(물고기는 나오고 낚시도 돼요). 동물이 필요하면 API에서 나오는 <b>목장 이용권</b>을 써요.</dd>
+            <dd>몹과 광물만 스폰돼요(물고기는 나오고 낚시도 돼요). 동물이 필요하면 API에서 나오는 <b>동물 던전 입장권</b>을 써요.</dd>
             <dt>잉여템은 가챠로</dt>
             <dd>로비 가챠 NPC에 필요 없는 <b>같은 등급 아이템 3개</b>를 넣으면, 같은 등급의 다른 아이템으로 랜덤 교환돼요.</dd>
             <dt>나만의 영지</dt>
@@ -1139,14 +1140,14 @@ body:not(.is-home) .mini { min-width: 0; }
         <div class="lab"><span class="no">01</span><h3>시작 보상</h3><span class="sub">처음 접속할 때 딱 1번</span></div>
         <div class="body">
           <div class="hotbar" role="list" aria-label="시작 보상">
-            <div class="slot" role="listitem"><span class="nm">꾸몬</span><span class="ct">10</span></div>
-            <div class="slot" role="listitem"><span class="nm">랜덤 씨앗 보따리</span><span class="ct">1</span></div>
+            <div class="slot" role="listitem"><span class="nm">꾸몬</span><span class="ct">10개</span></div>
+            <div class="slot" role="listitem"><span class="nm">랜덤 씨앗 보따리</span><span class="ct">1개</span></div>
             <div class="slot" role="listitem"><span class="nm">가죽 장비</span><span class="ct">4종</span></div>
             <div class="slot" role="listitem"><span class="nm">돌 도구</span><span class="ct">5종</span></div>
             <div class="slot" role="listitem"><span class="nm">땅문서</span><span class="ct">1칸</span></div>
-            <div class="slot" role="listitem"><span class="nm">장독대</span><span class="ct">1</span></div>
-            <div class="slot" role="listitem"><span class="nm">제로국밥</span><span class="ct">3</span></div>
-            <div class="slot" role="listitem"><span class="nm">마스크</span><span class="ct">1</span></div>
+            <div class="slot" role="listitem"><span class="nm">장독대</span><span class="ct">1개</span></div>
+            <div class="slot" role="listitem"><span class="nm">제로국밥</span><span class="ct">3개</span></div>
+            <div class="slot" role="listitem"><span class="nm">마스크</span><span class="ct">1개</span></div>
           </div>
           <ul class="dots" style="margin-top:14px">
             <li>처음 접속할 때 <b>딱 1번</b> 받아요. 잃어버리거나 실수로 버려도 다시 주지 않아요.</li>
@@ -1221,15 +1222,15 @@ body:not(.is-home) .mini { min-width: 0; }
         <div class="lab"><span class="no">03</span><h3>몸 녹이는 법</h3><span class="sub">따뜻한 대신 칼로리가 높은 것도 있어요</span></div>
         <div class="body">
           <div class="tblw"><table class="tbl wide stack">
-            <tr><th>방법</th><th>온기</th><th>칼로리</th><th>얻는 곳</th></tr>
-            <tr><td class="k">모닥불</td><td>곁에서 쉬면 30초에 걸쳐 최대 10칸</td><td class="dim">—</td><td>설치형 — 설치하면 자동으로 앉아서 쉬어요</td></tr>
-            <tr><td class="k">횃불</td><td>손에 들고 있는 동안 2칸 이하로 안 떨어짐</td><td class="dim">—</td><td>휴대형</td></tr>
-            <tr><td class="k">핫팩</td><td>우클릭 → 10초에 걸쳐 10칸, 30분 동안 안 깎임</td><td class="dim">—</td><td>베이직꾸러미(유저 API)</td></tr>
-            <tr><td class="k">커피믹스</td><td>1시간 동안 10칸 유지</td><td class="num">+4칸</td><td>자판기 2꾸몬</td></tr>
-            <tr><td class="k">생강차</td><td>마시는 즉시 +5칸</td><td class="dim">—</td><td>유저 API</td></tr>
-            <tr><td class="k">제로국밥</td><td>+4칸 · 허기 가득 · 포화 10분</td><td class="num">+반 칸</td><td>시작 보상 · 가챠샵 · 운영자 API</td></tr>
-            <tr><td class="k">붕어빵 · 찐빵</td><td>+2칸 · 허기 +10칸 · 포화 5분</td><td class="num">+1칸</td><td>직접 조리(난이도 중)</td></tr>
-            <tr><td class="k">코코아</td><td>+1칸</td><td class="num">+3칸</td><td>자판기 1꾸몬 · 가챠샵</td></tr>
+            <tr><th>방법</th><th>온기</th><th>칼로리</th><th>얻는 곳/사용방법</th></tr>
+            <tr><td class="k">모닥불</td><td>곁에서 쉬면 30초에 걸쳐 온기 최대&nbsp;10칸</td><td class="dim">—</td><td>설치형 — 설치하면 자동으로 앉아서 쉬어요</td></tr>
+            <tr><td class="k">횃불</td><td>손에 들고 있는 동안 온기가 2칸 이하로 안 떨어짐</td><td class="dim">—</td><td>휴대형</td></tr>
+            <tr><td class="k">핫팩</td><td>우클릭 → 10초에 걸쳐 온기&nbsp;10칸, 30분 동안 안 깎임</td><td class="dim">—</td><td>베이직꾸러미(유저 API)</td></tr>
+            <tr><td class="k">커피믹스</td><td>1시간 동안 온기&nbsp;10칸 유지</td><td class="num">+4칸</td><td>자판기 2꾸몬</td></tr>
+            <tr><td class="k">생강차</td><td>마시는 즉시 온기&nbsp;+5칸</td><td class="dim">—</td><td>베이직꾸러미(유저 API)</td></tr>
+            <tr><td class="k">제로국밥</td><td>온기&nbsp;+4칸 · 허기&nbsp;+10칸 · 포화&nbsp;10분</td><td class="num">+반 칸</td><td>시작 보상 · 가챠샵 · 운영자 API</td></tr>
+            <tr><td class="k">붕어빵 · 찐빵</td><td>온기&nbsp;+2칸 · 허기&nbsp;+10칸 · 포화&nbsp;5분</td><td class="num">+1칸</td><td>직접 조리(난이도 중)</td></tr>
+            <tr><td class="k">코코아</td><td>온기&nbsp;+1칸</td><td class="num">+3칸</td><td>자판기 1꾸몬 · 가챠샵</td></tr>
           </table></div>
           <p class="note">핫팩은 여러 개를 연달아 쓰면 예열 없이 효과와 시간이 겹쳐요. 남은 시간은 <kbd>E</kbd> 상태창에 표시되고, 모닥불 대신 쓸 수 있어요. ‘—’는 기획서에 수치가 없는 칸이에요.</p>
         </div>
@@ -1238,9 +1239,9 @@ body:not(.is-home) .mini { min-width: 0; }
         <div class="lab"><span class="no">04</span><h3>전통 음료 3종</h3></div>
         <div class="body">
           <dl class="dl">
-            <dt>수정과</dt><dd>5분 동안 어딜 밟아도 얼음 위처럼 미끄러져요. <span class="src">가챠샵</span><br><small style="color:var(--ink2)">아이템 설명: “미끌미끌미끌미끌미끌미끌미끌미끌”</small></dd>
+            <dt>수정과</dt><dd>5분 동안 어딜 밟아도 얼음 위처럼 미끄러져요. <span class="src">가챠샵</span></dd>
             <dt>매실차</dt><dd>비만 디버프가 걸렸을 때 마시면 디버프 30분 해제 <span class="src">유저 API</span></dd>
-            <dt>생강차</dt><dd>마시는 즉시 온기 5칸 채움 <span class="src">유저 API</span></dd>
+            <dt>생강차</dt><dd>마시는 즉시 온기 5칸 채움 <span class="src">베이직꾸러미(유저 API)</span></dd>
           </dl>
         </div>
       </div>
@@ -1266,7 +1267,6 @@ body:not(.is-home) .mini { min-width: 0; }
             <div class="stage s2"><span class="gauge cal sm" data-v="7"></span><span class="nm">중등도 비만<small>7칸 이상</small></span><span>무한 점프 — 강제 운동!</span></div>
             <div class="stage s3"><span class="gauge cal sm" data-v="9"></span><span class="nm">고도 비만<small>9칸 이상</small></span><span>30초마다 균형 잡기 미니게임 — 화면에 뜬 것과 <b>반대 방향</b> 화살표를 눌러요</span></div>
           </div>
-          <p style="margin-top:12px">비만 단계에 따라 <b>스킨도 통통해져요</b>(<kbd>E</kbd> 인벤토리 속 스킨까지). <span class="tbd">확정 전</span></p>
           <p class="note">요리는 대부분 칼로리가 높아요 — 섭취 권장 요리를 빼면 <b>허기 2칸 · 칼로리 3칸</b>. <a class="go" data-go="life" href="#life">요리 표 보기</a></p>
         </div>
       </div>
@@ -1285,17 +1285,7 @@ body:not(.is-home) .mini { min-width: 0; }
         <div class="lab"><span class="no">03</span><h3>산스장</h3><span class="sub">로비 운동 시설</span></div>
         <div class="body">
           <p>로비 산스장 <b>중앙 오픈 구역</b>에서 자유롭게 운동할 수 있어요. 유저 API <b>444</b>(산스장 5분)로 끌려온 사람은 <b>갇힌 구역 안에서만</b> 움직일 수 있고, 칼로리를 일정량 태울 때마다 남은 시간이 줄어요.</p>
-          <p style="margin-top:12px"><b>미니게임 후보</b> <span class="tbd">확정 전</span></p>
-          <dl class="dl" style="margin-top:4px">
-            <dt>눈치게임</dt><dd>접속 인원만큼 숫자 버튼이 나오고 1부터 차례로 — 같은 숫자를 누르거나 시간 안에 안 누르면 벌칙</dd>
-            <dt>런닝머신</dt><dd>균형 잡으면서 달리기</dd>
-            <dt>아령 들기</dt><dd>타이밍 맞춰 몇 번 누르다가 마지막엔 우다다 연타</dd>
-            <dt>줄넘기</dt><dd>알맞은 타이밍에 누르기</dd>
-            <dt>천국의 계단</dt><dd>계단 방향에 맞는 방향키 누르기</dd>
-            <dt>리듬 게임 <span class="tbd">가칭</span></dt><dd>파타퐁 같은 느낌</dd>
-            <dt>코어운동</dt><dd>널뛰기 판 위에서 중심 잡기</dd>
-            <dt>통나무 버티기 <span class="tbd">가칭</span></dt><dd>폭포에서 떨어지는 통나무 위에서 버티기</dd>
-          </dl>
+          <p style="margin-top:12px"><b>미니게임</b> <span class="soon">추후 공개</span></p>
         </div>
       </div>
     </div>
@@ -1328,15 +1318,15 @@ body:not(.is-home) .mini { min-width: 0; }
           <dl class="dl">
             <dt>농작물</dt><dd>등급 구분 없이 재배 · 등록</dd>
             <dt>물고기</dt><dd>등급 · 크기 구분 없이 획득 · 등록</dd>
-            <dt>그 밖</dt><dd>광물 · 요리 · 기본 마인크래프트 아이템 포함. 일부 아이템은 도감에서 빠지고 꾸몬으로 바꾸는 방향이에요. <span class="tbd">제외 목록 정리 중</span></dd>
-            <dt>달성 보상</dt><dd>제출 구간별 보상 <span class="tbd">논의 중</span></dd>
+            <dt>그 밖</dt><dd>광물 · 요리 · 기본 마인크래프트 아이템 포함</dd>
           </dl>
         </div>
       </div>
       <div class="row">
         <div class="lab"><span class="no">03</span><h3>표기 읽는 법</h3><span class="sub">화면 왼쪽 위</span></div>
         <div class="body">
-          <div class="readout" aria-label="도감 19(9)/26">
+          <div class="readout" aria-label="예시: 도감 19(9)/26">
+            <span class="ex"><em>예시)</em><small aria-hidden="true">&nbsp;</small></span>
             <span><b>19</b><small>총 제출</small></span>
             <span class="pa"><b>(9)</b><small>실드</small></span>
             <span><b>/26</b><small>총 목표</small></span>
@@ -1379,9 +1369,11 @@ body:not(.is-home) .mini { min-width: 0; }
         <div class="body">
           <ul class="dots">
             <li>첫 칸은 시작 보상 <b>땅문서(1칸)</b>로 열어요.</li>
-            <li>도감을 1개 제출할 때마다 <b>영토확장권(1칸)</b>이 선물함으로 들어와요.</li>
-            <li>단, <b>실드로 제출된 도감</b>엔 영토확장권이 없어요.</li>
+            <li>도감을 1개 제출할 때마다 <b>영역확장권(1칸)</b>이 선물함으로 들어와요.</li>
+            <li>단, <b>실드로 제출된 도감</b>엔 영역확장권이 없어요.</li>
             <li>활성 도감 10개를 <b>받기만 해서는</b> 영지가 안 넓어져요 — 제출해야 해요.</li>
+            <li><b>무료 도감 추가 NPC</b>를 클릭해서 <b>도감 추가 룰렛(50개) 1회 + 영역확장권 1개</b>를 받는 방법도 있어요. <a class="go" data-go="api" href="#api">API</a></li>
+            <li>영역확장권은 1인당 <b>최대 255개</b>까지만 쓸 수 있어요(첫 칸 포함 최대 256칸).</li>
           </ul>
         </div>
       </div>
@@ -1475,7 +1467,7 @@ body:not(.is-home) .mini { min-width: 0; }
             <tr><th>요리</th><th>조리 난이도</th><th>허기</th><th>칼로리</th><th>온기</th><th>그 밖</th></tr>
             <tr><td class="k">군고구마 · 군옥수수</td><td>하</td><td class="num">+4칸</td><td class="num">+1칸</td><td class="dim">—</td><td class="dim">—</td></tr>
             <tr><td class="k">붕어빵 · 찐빵</td><td>중</td><td class="num">+10칸</td><td class="num">+1칸</td><td class="num">+2칸</td><td>포화 버프 5분</td></tr>
-            <tr><td class="k">제로국밥</td><td>운영자 API</td><td>가득</td><td class="num">+반 칸</td><td class="num">+4칸</td><td>포화 버프 10분</td></tr>
+            <tr><td class="k">제로국밥</td><td>조리 불가 — 시작 보상 · 가챠샵 · 운영자 API</td><td class="num">+10칸</td><td class="num">+반 칸</td><td class="num">+4칸</td><td>포화 버프 10분</td></tr>
             <tr><td class="k">그 밖의 모든 요리</td><td>상관없음</td><td class="num">+2칸</td><td class="num warn">+3칸</td><td class="dim">—</td><td class="warn">칼로리 주의</td></tr>
             <tr><td class="k">탄 물고기 요리</td><td class="dim">—</td><td class="dim">—</td><td class="dim">—</td><td class="dim">—</td><td>농사용 비료</td></tr>
           </table></div>
@@ -1485,12 +1477,11 @@ body:not(.is-home) .mini { min-width: 0; }
         <div class="lab"><span class="no">04</span><h3>장독대</h3><span class="sub">숙성 설비</span></div>
         <div class="body">
           <ul class="dots">
-            <li>고추장 · 된장 · 간장 같은 <b>장류를 숙성</b>해요. 김치류는 레시피마다 확인 중. <span class="tbd">확정 전</span></li>
+            <li>고추장 · 된장 · 간장 같은 <b>장류를 숙성</b>해요.</li>
             <li>예) 장독대에 <b>메주 · 소금 · 물</b>을 1개씩 넣으면 <b>간장 1 + 된장 1</b>.</li>
             <li>1인 최대 <b>5개</b> — 처음 1개는 지급, 추가는 <b>2 → 3 → 4 → 6꾸몬</b>(총 15꾸몬).</li>
             <li><b>숙성연료</b>는 모든 장독대가 같이 써요. 최대 30회 · 숙성 1건에 1회. <b>1꾸몬</b>으로 충전권을 사서 우클릭하면 30회 충전.</li>
             <li>장독대가 있는 <b>청크가 활성화</b>돼 있을 때만 숙성돼요.</li>
-            <li>숙성 시간은 게임 시간 30분 이내가 목표 — 종류별 시간 <span class="tbd">확정 전</span></li>
           </ul>
         </div>
       </div>
@@ -1544,28 +1535,15 @@ body:not(.is-home) .mini { min-width: 0; }
           <div class="track"><span class="tl">방어구</span><div class="chain"><span class="st leather">가죽</span><span class="sg"><span class="ar">→</span><span class="st copper">구리</span></span><span class="sg"><span class="ar">→</span><span class="st iron">철</span></span><span class="sg"><span class="ar">→</span><span class="st dia">다이아</span></span><span class="sg"><span class="ar">→</span><span class="st nether">네더라이트</span></span></div></div>
           <div class="track"><span class="tl">도구</span><div class="chain"><span class="st stone">돌</span><span class="sg"><span class="ar">→<small>1꾸몬</small></span><span class="st copper">구리</span></span><span class="sg"><span class="ar">→<small>3꾸몬</small></span><span class="st iron">철</span></span><span class="sg"><span class="ar">→<small>6꾸몬</small></span><span class="st dia">다이아</span></span><span class="sg"><span class="ar">→<small>12꾸몬</small></span><span class="st nether">네더라이트</span></span></div></div>
           <ul class="dots">
-            <li>도구 승급은 <b>성공률 100%</b>, 비용은 화살표 아래 꾸몬이에요. 네더라이트 다음 단계엔 <b>추가 강화권</b>이 필요해요. <span class="tbd">확정 전</span></li>
-            <li>검도 돌 → 구리 → 철 → 다이아 → 네더라이트 순서로 승급해요. 검 · 방어구의 실제 승급 재료는 <span class="tbd">확인 중</span></li>
+            <li>도구 승급은 <b>성공률 100%</b>, 비용은 화살표 아래 꾸몬이에요. 네더라이트 다음 단계는 꾸몬으로 사는 <b>추가 강화권</b>만 있으면 돼요.</li>
+            <li>검도 돌 → 구리 → 철 → 다이아 → 네더라이트 순서로 승급해요.</li>
             <li>승급해도 <b>기존 인챈트는 그대로</b> 이어져요.</li>
             <li>방어구는 승급할수록 <b>기본 방어 성능</b>이 오르고, <b>보온</b>도 인챈트가 아니라 승급으로 올라가요.</li>
           </ul>
         </div>
       </div>
       <div class="row">
-        <div class="lab"><span class="no">02</span><h3>단계별 강화 기회</h3><span class="sub">기준표 <span class="tbd">확정 전</span></span></div>
-        <div class="body">
-          <div class="tblw"><table class="tbl">
-            <tr><th>단계</th><th>이번 단계</th><th>누적 가능 횟수</th></tr>
-            <tr><td class="k">가죽 / 돌</td><td class="num">+2회</td><td class="num">2회</td></tr>
-            <tr><td class="k">구리</td><td class="num">+3회</td><td class="num">5회</td></tr>
-            <tr><td class="k">철</td><td class="num">+4회</td><td class="num">9회</td></tr>
-            <tr><td class="k">다이아</td><td class="num">+5회</td><td class="num">14회</td></tr>
-            <tr><td class="k">네더라이트</td><td class="num">+6회</td><td class="num">20회</td></tr>
-          </table></div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="lab"><span class="no">03</span><h3>강화 상한</h3></div>
+        <div class="lab"><span class="no">02</span><h3>강화 상한</h3></div>
         <div class="body">
           <div class="tblw"><table class="tbl">
             <tr><th>장비</th><th>기본 상한</th><th>+5회 추가 강화권</th></tr>
@@ -1573,9 +1551,8 @@ body:not(.is-home) .mini { min-width: 0; }
             <tr><td class="k">검 · 곡괭이 · 도끼 · 삽 · 괭이</td><td class="num">20회</td><td class="num">25회까지</td></tr>
             <tr><td class="k">활 <small>(승급 없음)</small></td><td class="num">15회</td><td class="num">20회까지</td></tr>
             <tr><td class="k">낚싯대 <small>(승급 없음)</small></td><td class="num">15회</td><td class="num">20회까지</td></tr>
-            <tr><td class="k">겉날개 <small>(승급 없음)</small></td><td class="num">15회 <span class="tbd">임시</span></td><td>미정</td></tr>
           </table></div>
-          <p class="note">쇠뇌 · 삼지창 · 방패 · 가위는 강화 대상이 아니에요. 방어구 20회를 부위별로 적용할지는 <span class="tbd">확정 전</span></p>
+          <p class="note">쇠뇌 · 삼지창 · 방패 · 가위는 강화 대상이 아니에요.</p>
         </div>
       </div>
     </div>
@@ -1589,20 +1566,19 @@ body:not(.is-home) .mini { min-width: 0; }
         <div class="body">
           <div class="cost"><span class="c">경험치 1레벨</span><span class="plus">+</span><span class="c"><i class="coin"></i>1꾸몬</span><span class="plus">+</span><span class="c">강화권 1개</span></div>
           <ul class="dots">
-            <li>성공이든 실패 · 하락 · 파괴든 <b>비용은 소모</b>되고 돌려받지 못해요.</li>
+            <li>성공이든 실패 · 하락이든 <b>비용은 소모</b>되고 돌려받지 못해요.</li>
             <li>경험치가 <b>1레벨 미만</b>이면 시도할 수 없어요.</li>
             <li>수선은 모든 장비에서 없어요.</li>
           </ul>
         </div>
       </div>
       <div class="row">
-        <div class="lab"><span class="no">02</span><h3>결과 4가지</h3></div>
+        <div class="lab"><span class="no">02</span><h3>결과 3가지</h3></div>
         <div class="body">
           <div class="res">
             <div><span class="k" style="--c:#3f8f46">성공</span><span>랜덤 옵션 1종류가 <b>+1레벨</b>(없던 옵션은 I부터). 옵션이 실제로 붙었을 때만 강화 기회 1회 차감.</span></div>
             <div><span class="k" style="--c:#b9ada2">단순 실패</span><span>아이템 · 옵션 · 강화 기회 그대로. 경험치 1레벨은 소모.</span></div>
             <div><span class="k" style="--c:#e0962f">하락</span><span>가진 일반 옵션 하나가 <b>−1레벨</b>(I이었으면 사라짐). 실제로 떨어진 1레벨만큼 강화 기회 1회를 돌려받아요. 떨어뜨릴 옵션이 없으면 단순 실패.</span></div>
-            <div><span class="k" style="--c:#c8372d">파괴</span><span>선택 기능 — 켜지면 아이템 · 인챈트 · 추가 강화권 사용 상태가 함께 사라져요. 운영 초기엔 파괴 0% 권장 <span class="tbd">확정 전</span></span></div>
           </div>
         </div>
       </div>
@@ -1613,7 +1589,6 @@ body:not(.is-home) .mini { min-width: 0; }
           <ul class="dots">
             <li>한 곡괭이엔 고른 효과 하나만 켜져요.</li>
             <li>섬세한 손길 모드일 땐 행운 레벨을 <b>보관</b>했다가, 행운 모드로 돌아오면 그대로 복원돼요.</li>
-            <li>강화 횟수 공유 같은 세부 규칙 <span class="tbd">확정 전</span></li>
           </ul>
         </div>
       </div>
@@ -1624,61 +1599,6 @@ body:not(.is-home) .mini { min-width: 0; }
             <dt>+5회 추가 강화권</dt><dd>강화 상한을 5회 늘려요. 같은 아이템에 <b>1번만</b>. 늘어난 횟수와 사용 기록은 초기화 · 승급 · 양도 후에도 남아요. <span class="src">30꾸몬 · 교환 불가</span></dd>
             <dt>인챈트 초기화권</dt><dd>장비 1개의 일반 인챈트를 전부 지우고, <b>지운 총 레벨만큼 강화 기회</b>를 돌려받아요. 고정 보호 인챈트는 남아요. 이미 쓴 꾸몬 · 경험치는 환불 없음. 옵션 하나만 지우거나 모든 장비를 한 번에 초기화하는 기능은 없어요. <span class="src">3꾸몬</span></dd>
           </dl>
-          <p class="note">두 상점권 가격은 기획서 안에서도 ‘미정’으로 적힌 곳이 있어요. <span class="tbd">가격 확정 전</span></p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="win">
-    <div class="win-head"><i class="lamp"></i><div class="plaque"><h2>확률표</h2><span class="rib">운영 추천안 · 확정 전</span></div><i class="lamp"></i></div>
-    <div class="win-body">
-      <p class="intro">아래 수치는 기존 장비 가이드 기준의 <b>추천안 · 제안</b>이에요. 확정되면 바뀔 수 있어요.</p>
-      <div class="row">
-        <div class="lab"><span class="no">01</span><h3>강화 시도 결과</h3><span class="sub">현재 강화 총합 기준</span></div>
-        <div class="body">
-          <div class="keyline"><span><i style="background:#3f8f46"></i>성공</span><span><i style="background:#b9ada2"></i>단순 실패</span><span><i style="background:#e0962f"></i>하락</span><span><i style="background:#c8372d"></i>파괴</span></div>
-          <div class="tblw"><table class="tbl wide prob">
-            <tr><th>강화 총합</th><th>성공</th><th>단순 실패</th><th>하락</th><th>파괴</th><th class="hide-m">비율</th></tr>
-            <tr><td class="k num">0~4</td><td class="num">85%</td><td class="num">15%</td><td class="num">0%</td><td class="num">0%</td><td class="hide-m"><span class="sbar"><i class="s" style="width:85%"></i><i class="f" style="width:15%"></i></span></td></tr>
-            <tr><td class="k num">5~9</td><td class="num">70%</td><td class="num">20%</td><td class="num">10%</td><td class="num">0%</td><td class="hide-m"><span class="sbar"><i class="s" style="width:70%"></i><i class="f" style="width:20%"></i><i class="d" style="width:10%"></i></span></td></tr>
-            <tr><td class="k num">10~14</td><td class="num">50%</td><td class="num">25%</td><td class="num">25%</td><td class="num">0%</td><td class="hide-m"><span class="sbar"><i class="s" style="width:50%"></i><i class="f" style="width:25%"></i><i class="d" style="width:25%"></i></span></td></tr>
-            <tr><td class="k num">15~19</td><td class="num">40%</td><td class="num">30%</td><td class="num">30%</td><td class="num">0%</td><td class="hide-m"><span class="sbar"><i class="s" style="width:40%"></i><i class="f" style="width:30%"></i><i class="d" style="width:30%"></i></span></td></tr>
-            <tr><td class="k num">20~24</td><td class="num">30%</td><td class="num">20%</td><td class="num">50%</td><td class="num">0%</td><td class="hide-m"><span class="sbar"><i class="s" style="width:30%"></i><i class="f" style="width:20%"></i><i class="d" style="width:50%"></i></span></td></tr>
-          </table></div>
-          <p class="note">상한이 15회인 장비는 14회까지, 20회는 19회까지, 25회는 24회까지 시도할 수 있어요. 파괴를 켜는 안은 확률 미정이라 아직 적용하지 않아요.</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="lab"><span class="no">02</span><h3>옵션 등장 확률</h3><span class="sub">강화에 성공했을 때</span></div>
-        <div class="body">
-          <div class="tblw"><table class="tbl wide">
-            <tr><th>장비</th><th>옵션별 등장 확률</th><th>상태</th></tr>
-            <tr><td class="k">검</td><td>날카로움 25% · 내구성 20% · 휩쓸기 20% · 밀치기 14% · 발화 6% · 약탈 15%</td><td>합의안</td></tr>
-            <tr><td class="k">곡괭이</td><td>효율 40% · 내구성 40% · 행운 20%</td><td>합의안</td></tr>
-            <tr><td class="k">도끼</td><td>효율 40% · 내구성 35% · 벌목 25%</td><td>제안</td></tr>
-            <tr><td class="k">삽</td><td>효율 45% · 내구성 40% · 범위 채굴 15%</td><td>제안</td></tr>
-            <tr><td class="k">괭이</td><td>내구성 45% · 경작 45% · 풍요 10%</td><td>제안</td></tr>
-            <tr><td class="k">투구</td><td>보호 30% · 내구성 25% · 호흡 20% · 친수성 10% · 가시 15%</td><td>제안</td></tr>
-            <tr><td class="k">흉갑</td><td>보호 40% · 내구성 35% · 가시 25%</td><td>제안</td></tr>
-            <tr><td class="k">레깅스</td><td>보호 35% · 내구성 30% · 가시 20% · 신속한 잠행 15%</td><td>제안</td></tr>
-            <tr><td class="k">부츠</td><td>보호 25% · 내구성 20% · 가벼운 착지 25% · 물갈퀴 15% · 영혼 가속 10% · 가시 5%</td><td>제안</td></tr>
-            <tr><td class="k">활</td><td>힘 30% · 내구성 30% · 밀어내기 15% · 화염 15% · 무한 10%</td><td>제안</td></tr>
-            <tr><td class="k">낚싯대</td><td>미끼 45% · 내구성 40% · 바다의 행운 15%</td><td>제안</td></tr>
-            <tr><td class="k">겉날개</td><td>내구성 100%</td><td>임시 제안</td></tr>
-          </table></div>
-          <p class="note">토글 곡괭이는 모드와 상관없이 곡괭이 표를 같이 쓰는 안이에요 — 섬세한 손길 모드에서 행운이 뽑히면 보관된 행운 레벨이 올라가요. <span class="tbd">제안</span></p>
-          <p class="note">벌목 · 범위 채굴 · 경작 · 풍요는 이 서버 전용 효과라 따로 설계 중이에요. 옵션이 바닐라 최대 레벨보다 높게 올라가는 것도 허용하는 방향이에요. <span class="tbd">확정 전</span></p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="lab"><span class="no">03</span><h3>하락은 어디서?</h3></div>
-        <div class="body">
-          <p>하락이 나면 <b>지금 가진 일반 옵션</b> 중 하나가 떨어져요. 고르는 확률은 위 표와 같은 가중치를 쓰되, 가진 옵션끼리만 다시 100%로 나눠요. 레벨이 높다고 더 잘 떨어지진 않아요.</p>
-          <ul class="dots">
-            <li>효율 IV · 내구성 III · 행운 I 곡괭이 → 효율 40% / 내구성 40% / 행운 20%. 행운이 없다면 효율 50% / 내구성 50%.</li>
-            <li>날카로움 · 내구성 · 약탈만 있는 검 → 25 : 20 : 15 → <b>41.67% / 33.33% / 25.00%</b></li>
-          </ul>
         </div>
       </div>
     </div>
@@ -1698,8 +1618,7 @@ body:not(.is-home) .mini { min-width: 0; }
         <div class="lab"><span class="no">01</span><h3>꾸몬 규칙</h3></div>
         <div class="body">
           <ul class="dots">
-            <li>꾸몬은 <b>거래할 수 없어요</b>. 플레이어끼리는 <b>아이템끼리만</b> 교환해요.</li>
-            <li>인게임 꾸몬과 API 캐시는 따로 관리해요. <span class="tbd">관계 확정 전</span></li>
+            <li>꾸몬과 <b>꾸몬으로 거래할 수 있는 아이템</b>은 모두 <b>플레이어 간 거래 금지</b>예요.</li>
             <li>보유 꾸몬은 화면 왼쪽 위에 보여요.</li>
           </ul>
         </div>
@@ -1712,21 +1631,6 @@ body:not(.is-home) .mini { min-width: 0; }
             <dt>시작 보상</dt><dd><b>10꾸몬</b></dd>
             <dt>꾸몬 주머니</dt><dd>소형 · 중형은 베이직꾸러미(유저 API 100/1000), 대형은 운영자 API 555 섭주상자에서 나와요.</dd>
           </dl>
-        </div>
-      </div>
-      <div class="row full">
-        <div class="body">
-          <div class="board">
-            <h4>꾸몬 물가표</h4>
-            <div class="mrow"><span class="pr"><i class="coin"></i>1</span><span class="it">씨앗 16개 · 강화 1회 · 소화제 · 코코아 · 요리 도구(1개당) · 장독대 숙성연료 충전권 · 가챠샵 1회 <small>(+경험치 1레벨)</small></span></div>
-            <div class="mrow"><span class="pr"><i class="coin"></i>2</span><span class="it">커피믹스 · 므찐소화제</span></div>
-            <div class="mrow"><span class="pr"><i class="coin"></i>3</span><span class="it">인챈트 초기화권</span></div>
-            <div class="mrow"><span class="pr"><i class="coin"></i>5</span><span class="it">비닐하우스 <small>(첫 번째 · 두 번째는 10꾸몬)</small></span></div>
-            <div class="mrow"><span class="pr"><i class="coin"></i>15</span><span class="it">장독대 5개까지 늘리기 <small>(2 · 3 · 4 · 6꾸몬)</small></span></div>
-            <div class="mrow"><span class="pr"><i class="coin"></i>30</span><span class="it">+5회 추가 강화권 <small>(네더라이트 다음 단계 · 교환 불가)</small></span></div>
-            <div class="mrow"><span class="pr"><i class="coin"></i>1·3·6·12</span><span class="it">도구 승급 <small>(돌 → 구리 → 철 → 다이아 → 네더라이트)</small></span></div>
-            <p class="foot">꾸몬은 거래 금지 · 가격은 바뀔 수 있어요</p>
-          </div>
         </div>
       </div>
     </div>
@@ -1759,7 +1663,7 @@ body:not(.is-home) .mini { min-width: 0; }
             </div>
             <div>
               <h4>가챠샵</h4>
-              <p>1회 = <b>1꾸몬 + 경험치 1레벨</b>. 무료 횟수는 없어요. 돌릴 때마다 아래 보상 중 하나가 나와요. 확률 <span class="tbd">확정 전</span></p>
+              <p>1회 = <b>1꾸몬 + 경험치 1레벨</b>. 무료 횟수는 없어요. 돌릴 때마다 아래 보상 중 하나가 나와요.</p>
             </div>
           </div>
         </div>
@@ -1777,7 +1681,7 @@ body:not(.is-home) .mini { min-width: 0; }
         <div class="body">
           <dl class="dl">
             <dt>+5회 추가 강화권</dt><dd>30꾸몬 · 교환 불가 <a class="go" data-go="gear" href="#gear">장비·강화</a></dd>
-            <dt>인챈트 초기화권</dt><dd>장비 1개 단위 · 3꾸몬 <span class="tbd">가격 확정 전</span></dd>
+            <dt>인챈트 초기화권</dt><dd>장비 1개 단위 · 3꾸몬</dd>
           </dl>
         </div>
       </div>
@@ -1798,9 +1702,9 @@ body:not(.is-home) .mini { min-width: 0; }
       <div class="plist">
         <div><span class="amt">50 / 500</span><div><h4>도감 추가 / 빅추가</h4><p>채워야 할 도감이 늘어나요.</p></div></div>
         <div><span class="amt">51 / 510</span><div><h4>도감 감소 / 빅감소</h4><p>채워야 할 도감이 줄어요. 단, 활성 도감은 9개 미만으로 안 내려가요.</p></div></div>
-        <div><span class="amt">100 / 1000</span><div><h4>베이직꾸러미 1개 / 11개</h4><p>구성품 <span class="tbd">랜덤 1개인지 확인 필요</span></p>
-          <div class="chips"><span class="chip">매실차</span><span class="chip">귀환권</span><span class="chip">불사의 토템</span><span class="chip">소형 꾸몬 주머니</span><span class="chip">중형 꾸몬 주머니</span><span class="chip">강화권</span><span class="chip">장독대 확장권</span><span class="chip">인벤세이브권 (초대권 확률)</span><span class="chip">수리키트 10%</span><span class="chip">단거리 이동권 (100~1000m)</span><span class="chip">장거리 이동권 (3000~5000m)</span><span class="chip">지하 이동권 (Y −54 ~ −58)</span><span class="chip">셜커박스</span><span class="chip">겉날개 시간 추가권</span><span class="chip">마스크</span><span class="chip">핫팩</span></div></div></div>
-        <div><span class="amt">222</span><div><h4>괴롭히기 <span class="tbd">확정 전</span></h4><p>칼로리 폭탄(칼로리 즉시 +5칸) · 전염병 · 인벤 속 모든 내구도 20% 하락 · 감소 제한 개수 +1</p><p class="note" style="margin-top:8px">222 괴롭히기 대신 444 산스장만 넣을지 결정 전이에요.</p></div></div>
+        <div><span class="amt">100 / 1000</span><div><h4>베이직꾸러미 1개 / 11개</h4><p>꾸러미 1개마다 아래 중 <b>랜덤 1개</b>가 나와요.</p>
+          <div class="chips"><span class="chip">매실차</span><span class="chip">생강차</span><span class="chip">귀환권</span><span class="chip">불사의 토템</span><span class="chip">소형 꾸몬 주머니</span><span class="chip">중형 꾸몬 주머니</span><span class="chip">강화권</span><span class="chip">장독대 확장권</span><span class="chip">인벤세이브권 (초대권 확률)</span><span class="chip">수리키트 10%</span><span class="chip">단거리 이동권 (100~1000m)</span><span class="chip">장거리 이동권 (3000~5000m)</span><span class="chip">지하 이동권 (Y −54 ~ −58)</span><span class="chip">셜커박스</span><span class="chip">겉날개 시간 추가권</span><span class="chip">마스크</span><span class="chip">핫팩</span></div></div></div>
+        <div><span class="amt">222</span><div><h4>괴롭히기</h4><p>칼로리 폭탄(칼로리 즉시 +5칸) · 전염병 · 인벤 속 모든 내구도 20% 하락 · 감소 제한 개수 +1 중 <b>랜덤 1개</b></p></div></div>
         <div><span class="amt">444</span><div><h4>산스장 5분</h4><p>산스장에 갇혀 운동! 칼로리를 일정량 태울 때마다 남은 시간이 줄어요. <a class="go" data-go="survive" href="#survive">산스장</a></p></div></div>
         <div><span class="amt">4444</span><div><h4>즉사</h4><p>즉사 + 접속 인원 전체에게 베이직꾸러미 1개.</p></div></div>
       </div>
@@ -1819,33 +1723,11 @@ body:not(.is-home) .mini { min-width: 0; }
     <div class="win-body">
       <div class="plist">
         <div><span class="amt">333</span><div><h4>전체 일반상자</h4><p>유저 API 100개와 같은 구성.</p></div></div>
-        <div><span class="amt">444</span><div><h4>전체 미니게임</h4><p>단기기억 · 틀린그림찾기 · 카드 맞추기 등 <span class="tbd">확정 전</span></p></div></div>
-        <div><span class="amt">555</span><div><h4>전체 섭주상자</h4><p>한 명씩 <b>유용한 아이템 + 디버프 중 랜덤 1개</b>가 나와요. <span class="tbd">구성 확정 전</span></p>
-          <div class="pair">
-            <div class="good"><h5>유용한 아이템</h5>제로국밥 · 대형 꾸몬주머니 · 인벤세이브 · 단거리 이동권 · 장거리 이동권 · 지하 이동권 · 수리키트 50%</div>
-            <div class="bad"><h5>디버프</h5>
-              <dl>
-                <dt>(해몽) 식폭행</dt><dd>2분 동안 30초마다 배고픔 2칸씩</dd>
-                <dt>(설야차 · 도사) 꾸로나 유행</dt><dd>3명 이상 16칸 안에 모이면 독감(운영자 포함) · 마스크로 방어</dd>
-                <dt>(리어팡) 고드름 폭격</dt><dd>머리 위로 고드름 2초 간격 3번(무조건 맞음) · 맞을 때마다 온기 −3칸</dd>
-              </dl>
-            </div>
-          </div></div></div>
+        <div><span class="amt">444</span><div><h4>전체 미니게임</h4><p>미니게임 종류 <span class="soon">추후 공개</span></p></div></div>
+        <div><span class="amt">555</span><div><h4>전체 섭주상자</h4><p>한 명씩 <b>유용한 아이템 + 디버프 중 랜덤 1개</b>가 나와요.</p></div></div>
         <div><span class="amt">777</span><div><h4>배달부</h4><p>모두에게 랜덤 세트 메뉴 주문서 1장. 12시간 안에 완료하면 보상, 실패해도 패널티 없음. <a class="go" data-go="life" href="#life">배달부</a></p></div></div>
         <div><span class="amt">1111</span><div><h4>피버타임</h4><p><b>111초 동안</b> 유저 API 도감 추가 · 감소 룰렛이 2배, 운영자 API 배달부 주문서도 2배.</p></div></div>
       </div>
-      <p class="note">전체 미션 성공 보상 · 미니게임 종류와 방법 · 섭주상자 디버프와 아이템은 아직 정하는 중이에요.</p>
-    </div>
-  </div>
-
-  <div class="win">
-    <div class="win-head"><i class="lamp"></i><div class="plaque"><h2>점검 보상</h2><span class="rib">사료 3단계</span></div><i class="lamp"></i></div>
-    <div class="win-body">
-      <dl class="dl">
-        <dt>라이트 사료</dt><dd><b>가벼운 점검</b>일 때 — 제로국밥 · 동물 던전 입장권 · 장거리 텔포권 · 소화제 · 코코아 · 수리키트 10%</dd>
-        <dt>점검 사료</dt><dd><b>시간이 좀 걸린 점검</b>일 때 — 수리키트 50% · 인벤세이브</dd>
-        <dt>딥 사료</dt><dd><b>진짜 잘못했을 때</b> — 도감 꾸폰</dd>
-      </dl>
     </div>
   </div>
 
@@ -1860,10 +1742,9 @@ body:not(.is-home) .mini { min-width: 0; }
     <div class="win-head"><i class="lamp"></i><div class="plaque"><h2>서버 룰</h2><span class="rib">꼭 지켜 주세요</span></div><i class="lamp"></i></div>
     <div class="win-body">
       <ul class="rules">
-        <li><span class="mk o">✓</span><span><span class="rt">플레이어끼리 아이템 교환</span><small>아이템끼리 바꾸는 건 OK</small></span></li>
-        <li><span class="mk x">✕</span><span><span class="rt">꾸몬 거래</span><small>꾸몬은 주고받을 수 없어요</small></span></li>
-        <li><span class="mk x">✕</span><span><span class="rt">영지 공유</span><small>내 땅은 나만 — 화이트리스트 기능 없음</small></span></li>
-        <li><span class="mk x">✕</span><span><span class="rt">배달부 주문 재료 구걸 · 교환 · 양도</span><small>주문 재료는 직접 구하기</small></span></li>
+        <li><span class="mk x">✕</span><span><span class="rt">꾸몬 거래 금지</span><small>꾸몬으로 거래할 수 있는 아이템도 포함</small></span></li>
+        <li><span class="mk x">✕</span><span><span class="rt">영지 공유 불가능</span><small>내 땅은 나만 — 화이트리스트 기능 없음</small></span></li>
+        <li><span class="mk x">✕</span><span><span class="rt">배달부 주문 재료 구걸, 교환, 양도 금지</span><small>주문 재료는 직접 구하기</small></span></li>
       </ul>
       <p class="note">세부 서버 룰은 정리 중이에요. 확정되면 이곳에 추가돼요.</p>
     </div>
@@ -1884,10 +1765,9 @@ body:not(.is-home) .mini { min-width: 0; }
         <span><span class="when">2026년 12월 8일(화) 오후 7시 오픈 예정</span><small>한국 시간 · 오픈 전 최종 점검 결과에 따라 바뀔 수 있어요</small></span>
       </div>
       <dl class="dl" style="margin-top:18px">
-        <dt>운영 기간</dt><dd><span class="soon">준비 중</span></dd>
+        <dt>운영 기간</dt><dd><b>12월 8일(화) 오후 7시 ~ 12월 22일(화) 오후 7시</b> (2주)</dd>
         <dt>마크 버전</dt><dd><span class="soon">준비 중</span></dd>
-        <dt>접속 방법</dt><dd><span class="soon">준비 중</span></dd>
-        <dt>입주비</dt><dd><span class="soon">준비 중</span> — 졸업 후 재입주할 때도 다시 내요</dd>
+        <dt>접속 방법 · 입주비</dt><dd>참여자에게 디스코드로 따로 안내해요.</dd>
         <dt>처음 접속하면</dt><dd>시작 보상 · 활성 도감 10개 · 영지 1칸 <a class="go" data-go="home" href="#home">홈</a></dd>
       </dl>
     </div>
@@ -1922,8 +1802,7 @@ body:not(.is-home) .mini { min-width: 0; }
 
 <footer>
   <b>꾸다방 3 위키</b><br>
-  내용 기준: 꾸다방3 통합 기획서 (2026-11-25)<br>
-  <span class="tbd">확정 전</span> = 기획 단계라 바뀔 수 있는 내용
+  내용 기준: 꾸다방3 통합 기획서 · 운영자 확인 (2026-11-26)
 </footer>
 
 <script>
