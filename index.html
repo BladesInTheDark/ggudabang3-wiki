@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--
   ⚠ 빌드 결과물입니다 — 이 파일을 직접 고치지 마세요.
-  원본: src/template.html  →  python build.py  로 다시 만듭니다.  (빌드: 2026-11-25 21:19 KST)
+  원본: src/template.html  →  python build.py  로 다시 만듭니다.  (빌드: 2026-11-25 21:30 KST)
 -->
 <html lang="ko">
 <head>
@@ -887,6 +887,157 @@ body { font-size: var(--read-text); line-height: 1.68; font-weight: 450; }
   .tbl:not(.stack) td.num { white-space: normal; }
   .tbl:not(.stack):not(.prob) td, .tbl:not(.stack):not(.prob) th { padding-inline: 3px; }
 }
+</style>
+<style>
+.topbar [data-tab="home"] { --tab-glyph: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2024%2024%22%20fill=%22none%22%20stroke=%22%234b3527%22%20stroke-width=%221.65%22%20stroke-linejoin=%22round%22%20stroke-linecap=%22round%22%3E%3Cpath%20fill=%22%23d58b4d%22%20d=%22M4%2010h16v11H4z%22/%3E%3Cpath%20fill=%22%23aa5140%22%20d=%22M2%2010%2012%202l10%208-2%202-8-6-8%206z%22/%3E%3Cpath%20fill=%22%23fff1bd%22%20d=%22M9%2021v-8h6v8%22/%3E%3C/svg%3E"); }
+.topbar [data-tab="survive"] { --tab-glyph: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2024%2024%22%20fill=%22none%22%20stroke=%22%234b3527%22%20stroke-width=%221.65%22%20stroke-linejoin=%22round%22%20stroke-linecap=%22round%22%3E%3Cpath%20fill=%22%23e57435%22%20d=%22M13%202c1%205%205%205%205%209l2-2c2%206-1%2010-7%2011-6%200-10-3-9-8%201-2%202-4%204-5-1%204%201%204%201%204%202-2%204-5%204-9z%22/%3E%3Cpath%20fill=%22%23ffcf66%22%20stroke=%22none%22%20d=%22M13%2010c0%203%203%204%203%206a3.5%203.5%200%200%201-7%200c0-2%203-3%204-6z%22/%3E%3Cpath%20fill=%22none%22%20d=%22m4%2021%2015-2m-14%200%2014%203%22/%3E%3C/svg%3E"); }
+.topbar [data-tab="dex"] { --tab-glyph: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2024%2024%22%20fill=%22none%22%20stroke=%22%234b3527%22%20stroke-width=%221.65%22%20stroke-linejoin=%22round%22%20stroke-linecap=%22round%22%3E%3Cpath%20fill=%22%2386b6ca%22%20d=%22M2%204q5-2%2010%202%205-4%2010-2v15q-5-2-10%202-5-4-10-2z%22/%3E%3Cpath%20fill=%22none%22%20d=%22M12%206v15%22/%3E%3Cpath%20stroke=%22%23f5fbef%22%20stroke-width=%221.6%22%20d=%22m5%208%204%201m-4%203%204%201m6-4%204-1m-4%205%204-1%22/%3E%3C/svg%3E"); }
+.topbar [data-tab="life"] { --tab-glyph: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2024%2024%22%20fill=%22none%22%20stroke=%22%234b3527%22%20stroke-width=%221.65%22%20stroke-linejoin=%22round%22%20stroke-linecap=%22round%22%3E%3Cpath%20fill=%22%236aa55a%22%20d=%22M12%2016C5%2017%202%2012%202%207c6-1%2011%202%2010%209z%22/%3E%3Cpath%20fill=%22%2393bf6e%22%20d=%22M12%2013C12%206%2016%203%2022%203c0%206-3%2011-10%2010z%22/%3E%3Cpath%20fill=%22none%22%20d=%22M12%2021v-7m0%203-6-6m6%203%206-6M7%2021h10%22/%3E%3C/svg%3E"); }
+.topbar [data-tab="gear"] { --tab-glyph: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2024%2024%22%20fill=%22none%22%20stroke=%22%234b3527%22%20stroke-width=%221.65%22%20stroke-linejoin=%22round%22%20stroke-linecap=%22round%22%3E%3Cpath%20fill=%22%23cb935b%22%20d=%22m3%2019%2011-12%203%203L6%2022z%22/%3E%3Cpath%20fill=%22%2393b7c4%22%20d=%22m9%204%203-2%206%201%204%204-3%203-3-2-3%203-4-4%202-2z%22/%3E%3Cpath%20fill=%22%23ffd06d%22%20stroke-width=%221.2%22%20d=%22m19%2013%201%202.2%202.4%201-2.4%201-1%202.3-1-2.3-2.3-1%202.3-1z%22/%3E%3C/svg%3E"); }
+.topbar [data-tab="shop"] { --tab-glyph: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2024%2024%22%20fill=%22none%22%20stroke=%22%234b3527%22%20stroke-width=%221.65%22%20stroke-linejoin=%22round%22%20stroke-linecap=%22round%22%3E%3Cpath%20fill=%22%23dfa43e%22%20d=%22M2%2012h12v7c0%204-12%204-12%200z%22/%3E%3Cellipse%20fill=%22%23ffce69%22%20cx=%228%22%20cy=%2212%22%20rx=%226%22%20ry=%222.5%22/%3E%3Cpath%20fill=%22%23ebb650%22%20d=%22M9%206h13v9c0%204-13%204-13%200z%22/%3E%3Cellipse%20fill=%22%23ffda7d%22%20cx=%2215.5%22%20cy=%226%22%20rx=%226.5%22%20ry=%223%22/%3E%3Cpath%20fill=%22none%22%20stroke-width=%221.2%22%20d=%22M10%2011q6%203%2011%200M3%2017q2%201%205%201%22/%3E%3C/svg%3E"); }
+.topbar [data-tab="api"] { --tab-glyph: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2024%2024%22%20fill=%22none%22%20stroke=%22%234b3527%22%20stroke-width=%221.65%22%20stroke-linejoin=%22round%22%20stroke-linecap=%22round%22%3E%3Ccircle%20fill=%22%23e5bfea%22%20cx=%2212%22%20cy=%2211%22%20r=%222.5%22/%3E%3Cpath%20fill=%22none%22%20stroke=%22%23785387%22%20stroke-width=%222.5%22%20d=%22M6.7%206a7%207%200%200%200%200%2010m10.6-10a7%207%200%200%201%200%2010M3.4%203a11%2011%200%200%200%200%2016m17.2-16a11%2011%200%200%201%200%2016%22/%3E%3Cpath%20d=%22M12%2014v6m-3%201h6%22/%3E%3C/svg%3E"); }
+.topbar [data-tab="rules"] { --tab-glyph: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2024%2024%22%20fill=%22none%22%20stroke=%22%234b3527%22%20stroke-width=%221.65%22%20stroke-linejoin=%22round%22%20stroke-linecap=%22round%22%3E%3Cpath%20fill=%22%237faaa2%22%20d=%22M12%202c3%202%206%203%209%203%200%208-2%2013-9%2017C5%2018%203%2013%203%205c3%200%206-1%209-3z%22/%3E%3Cpath%20fill=%22none%22%20stroke=%22%23fff9dc%22%20stroke-width=%222.8%22%20d=%22m7.8%2011.9%203%203%205.9-6.3%22/%3E%3C/svg%3E"); }
+.topbar [data-tab="join"] { --tab-glyph: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2024%2024%22%20fill=%22none%22%20stroke=%22%234b3527%22%20stroke-width=%221.65%22%20stroke-linejoin=%22round%22%20stroke-linecap=%22round%22%3E%3Cpath%20fill=%22%23bd8664%22%20d=%22M9%203h11v18H9z%22/%3E%3Cpath%20fill=%22%23f5d7ab%22%20d=%22m9%203%208%202v14l-8%202z%22/%3E%3Cpath%20fill=%22none%22%20stroke=%22%23376954%22%20stroke-width=%222.6%22%20d=%22M2%2012h11m-4-4%204%204-4%204%22/%3E%3C/svg%3E"); }
+.topbar [data-tab="patch"] { --tab-glyph: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2024%2024%22%20fill=%22none%22%20stroke=%22%234b3527%22%20stroke-width=%221.65%22%20stroke-linejoin=%22round%22%20stroke-linecap=%22round%22%3E%3Cpath%20fill=%22%23f2d49a%22%20d=%22M5%203h13a3%203%200%200%201%203%203v2h-4v11a2%202%200%200%201-2%202H5a3%203%200%200%201-3-3v-1h4V5a2%202%200%200%200-1-2z%22/%3E%3Cpath%20fill=%22none%22%20d=%22M17%208V5m-8%203h5m-5%204h5m-5%203h3%22/%3E%3C/svg%3E"); }
+
+.topbar .nav-tab::before {
+  content: "";
+  display: inline-block;
+  width: 1.05em;
+  height: 1.05em;
+  margin-inline-end: .24em;
+  vertical-align: -.13em;
+  background: var(--tab-glyph) center / contain no-repeat;
+}
+.topbar .nav-tab { padding-inline: clamp(6px,.6vw,12px); }
+.topbar .nav-tab.on::before { filter: drop-shadow(0 0 1px #ffdd9e); }
+@media(min-width:1200px) {
+  :root:is([data-font-step="1"],[data-font-step="2"]) .topbar .tabs {
+    width: min(1380px,calc(100% - 24px)); gap: 3px;
+  }
+  :root:is([data-font-step="1"],[data-font-step="2"]) .topbar .nav-tab {
+    padding-inline: clamp(3px,.35vw,8px);
+  }
+}
+@media(min-width:761px) and (max-width:1199px) {
+  .topbar .tabs { gap: 3px; }
+  .topbar .nav-tab { padding: 4px 5px 7px; }
+  .topbar .nav-tab::before { display: block; width: 20px; height: 20px; margin: 0 auto 2px; }
+}
+@media(max-width:760px) {
+  .topbar .nav-tab { padding-inline: 8px; }
+  .topbar.menu-open .nav-tab { padding-inline: 3px; }
+}
+@media(max-width:360px) {
+  .topbar.menu-open .nav-tab::before { display:block; margin:0 auto 2px; }
+}
+
+/* rem 기준의 단계 차이를 공유해 사용자 기본 서체 크기와 브라우저 확대를 존중한다. */
+:root {
+  --font-step: 0rem;
+  --read-text: calc(1.25rem + var(--font-step));
+  --read-table: calc(1.125rem + var(--font-step));
+  --read-caption: calc(1rem + var(--font-step));
+  --read-heading: calc(1.625rem + var(--font-step));
+  --read-menu: calc(1.375rem + var(--font-step));
+}
+:root[data-font-step="-2"] { --font-step: -.25rem; }
+:root[data-font-step="-1"] { --font-step: -.125rem; }
+:root[data-font-step="1"] { --font-step: .125rem; }
+:root[data-font-step="2"] { --font-step: .25rem; }
+.topbar .nav-tab { font-size: var(--read-menu); }
+.topbar .nav-tab.on::after { max-width: calc(100% - 4px); left: 50%; transform: translateX(-50%); }
+.index-box summary, .open b { font-size: calc(1.375rem + var(--font-step)); }
+.cta .btn { font-size: calc(1.1875rem + var(--font-step)); }
+.plaque h2 { font-size: calc(2.125rem + var(--font-step)); }
+.hero-board h1 { font-size: calc(clamp(2.125rem, 3.2vw, 2.625rem) + var(--font-step)); }
+.dl dt, .stage .nm, .rules .rt, .res .k, .duo h4, .plist h4, .cost .c,
+.land-ctl label, .vitem .nm, .tk-val, .vend-top { font-size: calc(1.3125rem + var(--font-step)); }
+.hud .nb, .legend li::before { font-size: max(.75rem,calc(.9375rem + var(--font-step))); }
+.land-out, .board h4, .empty .big { font-size: calc(1.875rem + var(--font-step)); }
+.mrow .pr, .dday .when, .pn time { font-size: calc(1.5rem + var(--font-step)); }
+.dday .cnt { font-size: calc(2.625rem + var(--font-step)); }
+.readout b { font-size: calc(2.75rem + var(--font-step)); }
+.is-home .brand-name, .mini b { font-size: calc(1.5625rem + var(--font-step)); }
+.flow .n, .mk { font-size: calc(1.125rem + var(--font-step)); }
+.cost .plus { font-size: var(--read-text); }
+
+.font-controls {
+  display: inline-flex; align-items: center; gap: 2px;
+  position: absolute; top: 10px; right: 0; z-index: 4;
+  color: #fff4db; background: #24252af5; border: 1px solid #af875a; border-radius: 8px;
+  padding: 2px; box-shadow: 0 2px 5px #13181b66;
+  font-family: 'Pretendard Variable', Pretendard, sans-serif;
+}
+.font-control-label {
+  display: grid; gap: 2px; padding-inline: 7px 5px; line-height: 1.2;
+  font-size: clamp(.875rem,calc(.9375rem + var(--font-step)),1.0625rem);
+  font-weight: 650; white-space: nowrap;
+}
+.font-control-value { color: #ffd48b; font-size: .9375rem; font-weight: 650; }
+.font-control-value.numbered::after { content: '단계'; }
+.font-controls button {
+  display: grid; place-items: center; width: 44px; min-height: 44px; padding: 0;
+  font: 600 1.375rem/1 'Pretendard Variable', Pretendard, sans-serif;
+  border: 1px solid #8b755c; border-radius: 5px; color: #fff3d1; background: #403931; cursor: pointer;
+}
+.font-controls button:hover:enabled { background: #5b4936; border-color: #e4b775; }
+.font-controls button:focus-visible { outline: 3px solid #ffcd76; outline-offset: -3px; }
+.font-controls button:disabled { color: #a9a199; background: #302e2d; border-color: #514b45; cursor: default; }
+.font-control-status {
+  position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden;
+  clip-path: inset(50%); white-space: nowrap;
+}
+.is-home .banner-in { padding-top: 75px; }
+body:not(.is-home) .banner-in {
+  display: grid; grid-template-columns: minmax(0,1fr) auto; align-items: center; column-gap: 12px;
+}
+body:not(.is-home) .font-controls { position: static; align-self: start; }
+body:not(.is-home) .mini { min-width: 0; }
+
+@media (min-width:1111px) and (max-width:1199px) {
+  :root[data-font-step="2"] .topbar .nav-tab { padding-inline: 5px; }
+}
+@media (min-width:761px) and (max-width:1110px) {
+  :root { --read-menu: calc(1.25rem + var(--font-step)); }
+}
+@media (min-width:761px) and (max-width:940px) {
+  .topbar .tabs { gap: 2px; padding-inline: 5px; }
+  .topbar .nav-tab { padding-inline: 3px; }
+}
+@media (max-width:760px) {
+  :root {
+    --read-text: calc(1.1875rem + var(--font-step));
+    --read-heading: calc(1.5rem + var(--font-step));
+    --read-menu: calc(1.1875rem + var(--font-step));
+  }
+  .hero-board h1 { font-size: calc(2.125rem + var(--font-step)); }
+  .plaque h2 { font-size: calc(1.75rem + var(--font-step)); }
+  .open b, .cta .btn { font-size: calc(1.1875rem + var(--font-step)); }
+  .topbar .menu-toggle { font-size: max(.875rem,calc(.9375rem + var(--font-step))); }
+  .is-home .banner-in { padding-top: 155px; }
+  .is-home .brand-name, .mini b { font-size: calc(1.25rem + var(--font-step)); }
+  .font-controls { top: 9px; }
+  .readout b { font-size: calc(2.25rem + var(--font-step)); }
+}
+@media (max-width:420px) {
+  .font-control-label { padding-inline: 4px; }
+  .is-home .hero-logo { width: 40px; }
+  body:not(.is-home) .banner-in { column-gap: 7px; }
+  body:not(.is-home) .hero-col { gap: 5px; }
+  body:not(.is-home) .hero-logo { width: 40px; }
+  body:not(.is-home) .font-controls { align-self: start; }
+}
+@media (max-width:350px) {
+  .is-home .banner-in { padding-top: 139px; }
+  .font-controls { display: grid; grid-template-columns: repeat(2,44px); gap: 1px; }
+  .font-control-label { grid-column: 1/-1; display: flex; justify-content: center; align-items: center; gap: 4px; padding: 2px; font-size: .875rem; }
+  .font-control-value { font-size: .875rem; }
+  .font-control-value.numbered::after { content: none; }
+  .tbl:not(.stack) td.num { white-space: normal; }
+  :root[data-font-step="2"] .tblw:has(> .prob) { margin-inline: -10px; }
+}
+
 </style>
 </head>
 <body class="is-home">
@@ -2005,6 +2156,62 @@ body { font-size: var(--read-text); line-height: 1.68; font-weight: 450; }
   }
   update();
 })();
+</script>
+<script>
+/* 사용자가 정한 글자 크기는 이 브라우저의 꾸다방 3 위키에만 저장한다. */
+(() => {
+  const header = document.querySelector('.banner-in');
+  if (!header || header.querySelector('.font-controls')) return;
+
+  const key = 'ggudabang3-wiki.fontStep';
+  const descriptions = ['가장 작게', '작게', '기본', '크게', '가장 크게'];
+  const parseStep = value => ['-2', '-1', '0', '1', '2'].includes(value) ? Number(value) : 0;
+  const group = document.createElement('div');
+  group.className = 'font-controls';
+  group.setAttribute('role', 'group');
+  group.setAttribute('aria-label', '글자 크기 조절');
+  group.innerHTML =
+    '<span class="font-control-label" aria-hidden="true">글자 크기<span class="font-control-value"></span></span>' +
+    '<button type="button" data-font-change="-1" aria-label="글자 작게" title="글자 작게">−</button>' +
+    '<button type="button" data-font-change="1" aria-label="글자 크게" title="글자 크게">+</button>' +
+    '<span class="font-control-status" role="status" aria-live="polite" aria-atomic="true"></span>';
+  header.append(group);
+
+  const smaller = group.querySelector('[data-font-change="-1"]');
+  const larger = group.querySelector('[data-font-change="1"]');
+  const visibleStep = group.querySelector('.font-control-value');
+  const status = group.querySelector('[role="status"]');
+  let step = 0;
+
+  function show(value) {
+    step = value;
+    document.documentElement.dataset.fontStep = String(step);
+    const text = '글자 크기 ' + descriptions[step + 2];
+    visibleStep.textContent = step === 0 ? '기본' : (step > 0 ? '+' : '−') + Math.abs(step);
+    visibleStep.classList.toggle('numbered', step !== 0);
+    status.textContent = text;
+    group.title = text;
+    const moveFocus = step === -2 && document.activeElement === smaller ? larger :
+      step === 2 && document.activeElement === larger ? smaller : null;
+    smaller.disabled = step === -2;
+    larger.disabled = step === 2;
+    if (moveFocus) moveFocus.focus({preventScroll: true});
+  }
+
+  let saved = null;
+  try { saved = window.localStorage.getItem(key); } catch { /* 저장소 사용이 차단된 경우 */ }
+  show(parseStep(saved));
+  group.addEventListener('click', event => {
+    const button = event.target.closest('button[data-font-change]');
+    if (!button || button.disabled) return;
+    show(Math.max(-2, Math.min(2, step + Number(button.dataset.fontChange))));
+    try { window.localStorage.setItem(key, String(step)); } catch { /* 이 페이지에서는 계속 적용 */ }
+  });
+  window.addEventListener('storage', event => {
+    if (event.key === key || event.key === null) show(parseStep(event.newValue));
+  });
+})();
+
 </script>
 </body>
 </html>
